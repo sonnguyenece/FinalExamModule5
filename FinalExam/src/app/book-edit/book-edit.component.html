@@ -1,6 +1,7 @@
 <div class="container">
   <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
-  <h3>Chi tiết sách</h3>
+  <h3>Sửa thông tin sách</h3>
+    <a class="btn btn-success" routerLink="/book">Homepage</a>
   <p>Tên sách: </p>
     <input type="text" formControlName="title">
     <p>Tác giả:</p>

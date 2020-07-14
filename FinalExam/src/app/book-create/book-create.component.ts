@@ -38,7 +38,7 @@ export class BookCreateComponent implements OnInit {
   onSubmit() {
     if (this.bookForm.valid) {
       const {value} = this.bookForm;
-      this.bookService.updatePost(value)
+      this.bookService.createPost(value)
         .subscribe(next => {
           this.bookForm.reset({
             title: '',
