@@ -14,7 +14,7 @@
       <td>{{i + 1}}</td>
       <td><a [routerLink]="['/book', book.id]"> {{book.title}}</a></td>
       <td>{{book.author}}</td>
-      <td><a href="">Xóa</a> |<a href="">Sửa</a></td>
+      <td><a (click)="deletePost(i)">Xóa</a> |<a href="">Sửa</a></td>
     </tr>
 
 

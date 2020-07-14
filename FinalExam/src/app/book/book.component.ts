@@ -23,7 +23,13 @@ export class BookComponent implements OnInit {
     this.bookQuantity = this.bookList.length
   }
 
-  deletePost(i: number) {
+  deletePost(i) {
+    const book = this.bookList[i];
 
+    if (confirm("Are you sure to delete id: "+book.title)) {
+    this.bookService.deletePost(book.id).subscribe(() => {
+      this.bookList = this.bookList.filter(t => t.id !== book.id);
+    })
+    }
   }
 }
