@@ -24,6 +24,7 @@ export class BookService {
     return this.http.delete(`${this.API_URL}/${id}`);
   }
   updatePost(post: Partial<IBook>): Observable<IBook> {
-    return this.http.post<IBook>(this.API_URL, post.id);
+    // return this.http.post<IBook>(this.API_URL, post.id);
+    return this.http.put<IBook>(`${this.API_URL}/${post.id}`,post);
   }
 }
