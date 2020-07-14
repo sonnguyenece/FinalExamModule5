@@ -12,9 +12,7 @@ export class BookService {
 
   constructor(private http: HttpClient) { }
   getPosts(count = 10): Observable<IBook[]> {
-    return this.http.get<IBook[]>(this.API_URL).pipe(
-      map(response => response.filter((post, i) => i < count))
-    );
+    return this.http.get<IBook[]>(this.API_URL);
   }
   getPostById(id: number): Observable<IBook> {
     return this.http.get<IBook>(`${this.API_URL}/${id}`);

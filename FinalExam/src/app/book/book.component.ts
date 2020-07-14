@@ -20,7 +20,11 @@ export class BookComponent implements OnInit {
       .getPosts()
       .subscribe(next => (this.bookList = next
       ) , error => (this.bookList = []));
-    this.bookQuantity = this.bookList.length
+
+    this.bookService
+      .getPosts()
+      .subscribe(next => (this.bookQuantity = next.length
+      ) , error => (this.bookList = []));
   }
 
   deletePost(i) {
@@ -28,7 +32,8 @@ export class BookComponent implements OnInit {
 
     if (confirm("Are you sure to delete id: "+book.title)) {
     this.bookService.deletePost(book.id).subscribe(() => {
-      this.bookList = this.bookList.filter(t => t.id !== book.id);
+      this.bookList = this.bookList.filter(t => t.id !== book.id)
+      this.bookQuantity = this.bookList.length;
     })
     }
   }
