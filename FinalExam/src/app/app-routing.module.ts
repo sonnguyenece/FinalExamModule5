@@ -4,6 +4,7 @@ import {BookComponent} from "./book/book.component";
 import {BookEditComponent} from "./book-edit/book-edit.component";
 import {BookDetailComponent} from "./book-detail/book-detail.component";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
+import {BookCreateComponent} from "./book-create/book-create.component";
 
 
 const routes: Routes = [{
@@ -15,6 +16,9 @@ const routes: Routes = [{
 }, {
   path: 'book/:id/edit',
   component: BookEditComponent
+},{
+  path: 'create',
+  component: BookCreateComponent
 },
   {
     path: "",

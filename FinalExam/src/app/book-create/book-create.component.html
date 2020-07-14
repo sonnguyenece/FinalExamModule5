@@ -1,1 +1,14 @@
-<p>book-create works!</p>
+<div class="container">
+  <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+    <h3>Chi tiết sách</h3>
+    <p>Tên sách: </p>
+    <input type="text" formControlName="title">
+    <p>Tác giả:</p>
+    <input type="text" formControlName="author">
+    <p>Mô tả:</p>
+    <textarea formControlName="description" cols="100" rows="10"></textarea>
+    <div *ngIf="message">{{message}}</div>
+    <br>
+    <button type="submit">Submit</button>
+  </form>
+</div>

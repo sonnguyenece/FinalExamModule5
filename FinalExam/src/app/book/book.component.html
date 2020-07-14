@@ -1,6 +1,6 @@
 <div class="container">
   <h3>Có {{bookQuantity}} cuốn sách</h3>
-  <button class="btn btn-primary" style="margin-bottom: 10px">Thêm sách mới</button>
+  <a class="btn btn-primary" style="margin-bottom: 10px" routerLink="/create">Thêm sách mới</a>
   <table class="table table-dark">
 
     <tr>
@@ -14,7 +14,7 @@
       <td>{{i + 1}}</td>
       <td><a [routerLink]="['/book', book.id]"> {{book.title}}</a></td>
       <td>{{book.author}}</td>
-      <td><a (click)="deletePost(i)">Xóa</a> |<a href="">Sửa</a></td>
+      <td><a (click)="deletePost(i)">Xóa</a> |<a [routerLink]="['/book', book.id, 'edit']">Sửa</a></td>
     </tr>
 
 
@@ -23,7 +23,7 @@
     <!--          Post Id: {{book.id}} - {{book.title}}-->
     <!--        </a>-->
     <!--    </h3>-->
-    <!--    <a class="btn btn-warning" [routerLink]="['/book', book.id, 'edit']">Edit</a>-->
+<!--        <a class="btn btn-warning" [routerLink]="['/book', book.id, 'edit']">Edit</a>-->
 
     <!--    <button class="btn btn-danger" (click)="deletePost(i)">Delete</button>-->
   </table>
