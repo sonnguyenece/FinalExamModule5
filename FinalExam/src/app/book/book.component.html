@@ -1,0 +1,30 @@
+<div class="container">
+  <h3>Có {{bookQuantity}} cuốn sách</h3>
+  <button class="btn btn-primary" style="margin-bottom: 10px">Thêm sách mới</button>
+  <table class="table table-dark">
+
+    <tr>
+      <td>#</td>
+      <td>Tên sách</td>
+      <td>Tác giả</td>
+      <td></td>
+    </tr>
+
+    <tr *ngFor="let book of bookList; index as i">
+      <td>{{i + 1}}</td>
+      <td><a [routerLink]="['/book', book.id]"> {{book.title}}</a></td>
+      <td>{{book.author}}</td>
+      <td><a href="">Xóa</a> |<a href="">Sửa</a></td>
+    </tr>
+
+
+    <!--    <h3>-->
+    <!--        <a [routerLink]="['/book', book.id]">-->
+    <!--          Post Id: {{book.id}} - {{book.title}}-->
+    <!--        </a>-->
+    <!--    </h3>-->
+    <!--    <a class="btn btn-warning" [routerLink]="['/book', book.id, 'edit']">Edit</a>-->
+
+    <!--    <button class="btn btn-danger" (click)="deletePost(i)">Delete</button>-->
+  </table>
+</div>
